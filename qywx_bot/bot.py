@@ -1,6 +1,6 @@
 import requests
 
-import check
+from . import check
 
 class Bot():
     url = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key="
@@ -26,5 +26,4 @@ class Bot():
         requests.post(f"{self.url}{self.key}", json=data, headers=self.header)
 
         #todo: mentioned_list, mentioned_mobile_list
-    
     

@@ -4,11 +4,21 @@
 
 使用方式：
 
-```Python
-from qyex_bot import Bot
-bot = Bot(key="...") # 企业微信 webhook key
-bot.send_text(content="hello world")
-```
+1. 新建 `.env`，写入企业微信 webhook key，例如：
+    ```ini
+    WEBHOOK_KEY = "asdf123456"
+    ```
+2. 发送信息
+    ```Python
+    from dotenv import load_dotenv
+    load_dotenv()
+    import os
+    key = os.getenv("WEBHOOK_KEY")
+    from qywx_bot.bot import Bot
+
+    bot = Bot(key="...")
+    bot.send_text(content="hello world")
+    ```
 
 ## 环境
 
